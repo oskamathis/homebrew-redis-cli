@@ -2,16 +2,16 @@
 
 VERSION=$1
 
-set $(curl -Ls https://github.com/antirez/redis/archive/${VERSION}.tar.gz | shasum -a 256)
+set $(curl -Ls https://github.com/redis/redis/archive/${VERSION}.tar.gz | shasum -a 256)
 FILE_HASH=${1}
 
 cat << END_OF＿TEMPLATE
 class RedisCli < Formula
   desc "Install the redis-cli only."
-  homepage "https://github.com/aoki/homebrew-redis-cli"
+  homepage "https://github.com/oskamathis/homebrew-redis-cli"
   version "${VERSION}"
   sha256 "${FILE_HASH}"
-  url "https://github.com/antirez/redis/archive/#{version}.tar.gz"
+  url "https://github.com/redis/redis/archive/#{version}.tar.gz"
 
   def install
     system "make redis-cli"
