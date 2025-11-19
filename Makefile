@@ -1,7 +1,5 @@
-link:
-	ln -s $(PWD)/redis-cli.rb /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/redis-cli.rb
-.PHONY: link
+install:
+	brew install --formula --build-from-source --debug Formula/redis-cli.rb
 
-unlink:
-	unlink /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/redis-cli.rb
-.PHONY: unlink
+reinstall:
+	brew reinstall --formula --build-from-source --debug Formula/redis-cli.rb
